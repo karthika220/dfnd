@@ -82,11 +82,36 @@ document.querySelectorAll('.cta-btn, .explore-btn').forEach(button => {
 
 // Hero banner video handling
 document.addEventListener('DOMContentLoaded', function() {
-    const heroBannerVideo = document.querySelector('.hero-banner-video');
+    const heroBannerVideo = document.getElementById('heroBannerVideo') || document.querySelector('.hero-banner-video');
     if (heroBannerVideo) {
-        // Ensure video plays on mobile devices
+        // Set video properties
+        heroBannerVideo.setAttribute('autoplay', '');
+        heroBannerVideo.setAttribute('muted', '');
+        heroBannerVideo.setAttribute('loop', '');
+        heroBannerVideo.setAttribute('playsinline', '');
+        heroBannerVideo.setAttribute('preload', 'auto');
+        
+        // Ensure video plays
         heroBannerVideo.play().catch(function(error) {
             console.log('Hero banner video autoplay prevented:', error);
+            // Try to play again after user interaction
+            document.addEventListener('click', function playVideo() {
+                heroBannerVideo.play().catch(function(err) {
+                    console.log('Video play failed:', err);
+                });
+                document.removeEventListener('click', playVideo);
+            }, { once: true });
+        });
+        
+        // Handle video load errors
+        heroBannerVideo.addEventListener('error', function(e) {
+            console.error('Video loading error:', e);
+            console.log('Video source:', heroBannerVideo.querySelector('source').src);
+        });
+        
+        // Log when video starts playing
+        heroBannerVideo.addEventListener('play', function() {
+            console.log('Hero banner video is playing');
         });
     }
     

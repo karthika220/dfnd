@@ -92,6 +92,10 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .hero-logo-fallback {
@@ -630,18 +634,26 @@ body {
     }
     
     .hero-badges {
-        right: 15px;
-        top: calc(50% + 90px);
-        transform: translateY(-50%);
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
     
     .usa-badge {
         height: 40px;
+        width: auto;
     }
     
-    .usa-badge {
-        height: 40px;
+    .cta-btn {
+        margin-bottom: 15px;
     }
     
     .feature-card,
@@ -729,9 +741,9 @@ body {
     .cta-btn {
         padding: 14px 30px;
         font-size: 16px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -740,19 +752,28 @@ body {
     
     .hero-content {
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
     
     .hero-badges {
-        position: absolute;
-        right: 20px;
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 15px;
-        justify-content: flex-end;
-        top: calc(50% + 100px);
-        transform: translateY(-50%);
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     .usa-badge {
         height: 50px;
+        width: auto;
     }
     
     /* Section titles mobile */
