@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    background: transparent;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -241,6 +245,7 @@ body {
     max-width: 600px;
     height: auto;
     border-radius: 8px;
+    background: transparent;
 }
 
 /* Why Choose Section */
@@ -303,6 +308,7 @@ body {
     width: 50px;
     height: 50px;
     object-fit: contain;
+    background: transparent;
 }
 
 .feature-card h3 {
@@ -359,6 +365,7 @@ body {
     max-width: 600px;
     height: auto;
     border-radius: 8px;
+    background: transparent;
 }
 
 .sun-film-text h2 {
@@ -453,9 +460,11 @@ body {
 }
 
 .engineering-image img {
+    background: transparent;
 }
 
 .layers-diagram img {
+    background: transparent;
 }
 
 /* FAQ Section */
